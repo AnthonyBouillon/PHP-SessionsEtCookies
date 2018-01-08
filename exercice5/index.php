@@ -1,17 +1,19 @@
 <?php 
-    if(isset($_POST['pseudo']))
+     /* Si le champ pseudo n'est pas vide -> créer un cookie valide 1 ans */
+    if(!empty($_POST['pseudo']))
         setcookie('pseudo', $_POST['pseudo'], time()+24*3600, null, null, false, true);
-    if(isset($_POST['password']))
+    if(!empty($_POST['password']))
         setcookie('password', $_POST['password'], time()+24*2600, null, null, false, true);
 ?>
-<DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8" />
         <title>Sessions & cookies Exercice 3</title>
     </head>
     <body>        
         <h1>PHP - Variables superglobales, sessions et cookies</h1><hr/>
+        <!-- Envoie les données sur la page modifCookie.php -->
         <form method="post" action="../exercice4/modifCookie.php">
             <h2>Formulaire de connexion</h2>
             <fieldset>
@@ -20,13 +22,14 @@
                 <button>Validez</button>
             </fieldset>
         </form>
-        <!-- Direction vers l'exercice suivant -->
+         <!-- Direction vers l'exercice suivant -->
         <ul>
-           <li><a href="../exercice1/index.php">Exercice 1</a></li>
-           <li><a href="../exercice2/index.php">Exercice 2</a></li>
-           <li><a href="../exercice3/index.php">Exercice 3</a></li>
-           <li><a href="../exercice5/index.php">Exercice 5</a></li>
-         </ul>
+            <li><a href="../exercice1/index.php">Exercice 1</a></li>
+            <li><a href="../exercice2/index.php">Exercice 2</a></li>
+            <li><a href="../exercice3/index.php">Exercice 3</a></li>
+            <li><a href="../exercice5/index.php">Exercice 5</a></li>
+            <li><a href="../exercice4/modifCookie.php">Affichage des données du cookie</a></li>
+        </ul>
         
         <style>
             #inputPseudo{
